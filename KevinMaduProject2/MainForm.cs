@@ -8,9 +8,9 @@ namespace KevinMaduProject2
         {
             InitializeComponent();
             var t = new TextTwist();
-            for (var i = 0; i < t.letters.Count; i++)
+            for (var i = 0; i < t.RandomLetters.Count; i++)
             {
-                displayTxtbox.Text += $"{i}.{t.letters[i]}{Environment.NewLine}";
+                displayTxtbox.Text += $"{i}.{t.RandomLetters[i]}{Environment.NewLine}";
             }
         }
     }

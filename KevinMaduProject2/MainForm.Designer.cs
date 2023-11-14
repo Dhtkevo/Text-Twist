@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             displayTxtbox = new TextBox();
+            userWordTxtbox = new TextBox();
             SuspendLayout();
             // 
             // displayTxtbox
@@ -41,11 +42,19 @@
             displayTxtbox.Size = new Size(536, 244);
             displayTxtbox.TabIndex = 0;
             // 
+            // userWordTxtbox
+            // 
+            userWordTxtbox.Location = new Point(331, 343);
+            userWordTxtbox.Name = "userWordTxtbox";
+            userWordTxtbox.Size = new Size(168, 23);
+            userWordTxtbox.TabIndex = 1;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(userWordTxtbox);
             Controls.Add(displayTxtbox);
             Name = "MainForm";
             Text = "Text Twist By Madu";
@@ -56,5 +65,6 @@
         #endregion
 
         private TextBox displayTxtbox;
+        private TextBox userWordTxtbox;
     }
 }

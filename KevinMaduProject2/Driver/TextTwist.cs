@@ -8,13 +8,31 @@ namespace KevinMaduProject2.Driver
 {
     public class TextTwist
     {
-        public List<char> letters; 
+        public List<char> Letters; 
+
+        public List<char> RandomLetters;
+
 
         public TextTwist()
         {
-            letters = new List<char>();
+            Letters = new List<char>();
+            RandomLetters = new List<char>();
 
             PopulateLetters();
+            GenerateSevenRandomLetters();
+        }
+
+        public void GenerateSevenRandomLetters()
+        {
+            Random rnd = new Random();
+
+            for (int j = 0; j < 7; j++)
+            {
+                var index = rnd.Next(97);
+                var letter = Letters[index];
+                RandomLetters.Add(letter);
+
+            }
         }
 
         private void PopulateLetters()
@@ -22,72 +40,72 @@ namespace KevinMaduProject2.Driver
             // add 11 e's to letters
             for (var i = 0; i < 11; i++)
             {
-                letters.Add('e');
+                Letters.Add('e');
             }
 
             // add 9 t's
             for (var i = 0; i < 9; i++)
             {
-                letters.Add('t');
+                Letters.Add('t');
             }
 
             // add 8 o's
             for (var i = 0; i < 8; i++)
             {
-                letters.Add('o');
+                Letters.Add('o');
             }
 
             // add 6 a,i,n,s
             for (var i = 0; i < 6; i++)
             {
-                letters.Add('a');
-                letters.Add('i');
-                letters.Add('n');
-                letters.Add('s');
+                Letters.Add('a');
+                Letters.Add('i');
+                Letters.Add('n');
+                Letters.Add('s');
             }
 
             // add 5 h,r
             for (var i = 0; i < 5; i++)
             {
-                letters.Add('h');
-                letters.Add('r');
+                Letters.Add('h');
+                Letters.Add('r');
             }
 
             // add 4 l's
             for (var i = 0; i < 4; i++)
             {
-                letters.Add('l');
+                Letters.Add('l');
             }
 
             // add 3 d,u,w,y
             for (var i = 0; i < 3; i++)
             {
-                letters.Add('d');
-                letters.Add('u');
-                letters.Add('w');
-                letters.Add('y');
+                Letters.Add('d');
+                Letters.Add('u');
+                Letters.Add('w');
+                Letters.Add('y');
             }
 
             // add 2 b,c,f,g,m,p,v
             for (var i = 0; i < 2; i++)
             {
-                letters.Add('b');
-                letters.Add('c');
-                letters.Add('f');
-                letters.Add('g');
-                letters.Add('m');
-                letters.Add('p');
-                letters.Add('v');
+                Letters.Add('b');
+                Letters.Add('c');
+                Letters.Add('f');
+                Letters.Add('g');
+                Letters.Add('m');
+                Letters.Add('p');
+                Letters.Add('v');
             }
 
             // add 1 j,k,q,x,z
             for (var i = 0; i < 1; i++)
             {
-                letters.Add('j');
-                letters.Add('k');
-                letters.Add('q');
-                letters.Add('x');
-                letters.Add('z');
+                Letters.Add('j');
+                Letters.Add('k');
+                Letters.Add('q');
+                Letters.Add('x');
+                Letters.Add('z');
             }
         }
     }
