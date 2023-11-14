@@ -28,18 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            displayTxtbox = new TextBox();
             SuspendLayout();
+            // 
+            // displayTxtbox
+            // 
+            displayTxtbox.Location = new Point(127, 50);
+            displayTxtbox.Multiline = true;
+            displayTxtbox.Name = "displayTxtbox";
+            displayTxtbox.ReadOnly = true;
+            displayTxtbox.ScrollBars = ScrollBars.Vertical;
+            displayTxtbox.Size = new Size(536, 244);
+            displayTxtbox.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(displayTxtbox);
             Name = "MainForm";
             Text = "Text Twist By Madu";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox displayTxtbox;
     }
 }
