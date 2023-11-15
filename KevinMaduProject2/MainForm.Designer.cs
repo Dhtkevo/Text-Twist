@@ -51,7 +51,7 @@
             // 
             // userWordTxtbox
             // 
-            userWordTxtbox.Location = new Point(284, 325);
+            userWordTxtbox.Location = new Point(322, 328);
             userWordTxtbox.Name = "userWordTxtbox";
             userWordTxtbox.Size = new Size(168, 23);
             userWordTxtbox.TabIndex = 1;
@@ -65,6 +65,7 @@
             letterBtn1.TabIndex = 2;
             letterBtn1.Text = "1";
             letterBtn1.UseVisualStyleBackColor = true;
+            letterBtn1.Click += letterBtn1_Click;
             // 
             // letterBtn2
             // 
@@ -75,6 +76,7 @@
             letterBtn2.TabIndex = 3;
             letterBtn2.Text = "2";
             letterBtn2.UseVisualStyleBackColor = true;
+            letterBtn2.Click += letterBtn2_Click;
             // 
             // letterBtn3
             // 
@@ -85,6 +87,7 @@
             letterBtn3.TabIndex = 4;
             letterBtn3.Text = "3";
             letterBtn3.UseVisualStyleBackColor = true;
+            letterBtn3.Click += letterBtn3_Click;
             // 
             // letterBtn4
             // 
@@ -95,6 +98,7 @@
             letterBtn4.TabIndex = 5;
             letterBtn4.Text = "4";
             letterBtn4.UseVisualStyleBackColor = true;
+            letterBtn4.Click += letterBtn4_Click;
             // 
             // letterBtn5
             // 
@@ -105,6 +109,7 @@
             letterBtn5.TabIndex = 6;
             letterBtn5.Text = "5";
             letterBtn5.UseVisualStyleBackColor = true;
+            letterBtn5.Click += letterBtn5_Click;
             // 
             // letterBtn6
             // 
@@ -115,6 +120,7 @@
             letterBtn6.TabIndex = 7;
             letterBtn6.Text = "6";
             letterBtn6.UseVisualStyleBackColor = true;
+            letterBtn6.Click += letterBtn6_Click;
             // 
             // letterBtn7
             // 
@@ -125,6 +131,7 @@
             letterBtn7.TabIndex = 8;
             letterBtn7.Text = "7";
             letterBtn7.UseVisualStyleBackColor = true;
+            letterBtn7.Click += letterBtn7_Click;
             // 
             // MainForm
             // 
