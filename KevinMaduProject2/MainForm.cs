@@ -4,14 +4,29 @@ namespace KevinMaduProject2
 {
     public partial class MainForm : Form
     {
+
+        private TextTwist _textTwist;
+        private List<char> _randomLetters;
         public MainForm()
         {
             InitializeComponent();
-            var t = new TextTwist();
-            for (var i = 0; i < t.RandomLetters.Count; i++)
-            {
-                displayTxtbox.Text += $"{i}.{t.RandomLetters[i]}{Environment.NewLine}";
-            }
+
+            _textTwist = new TextTwist();
+            _randomLetters = _textTwist.RandomLetters;
+
+            // Make text of each button corresponding random letter
+            PopulateLetterButtons();
+        }
+
+        private void PopulateLetterButtons()
+        {
+            letterBtn1.Text = _randomLetters[0].ToString();
+            letterBtn2.Text = _randomLetters[1].ToString();
+            letterBtn3.Text = _randomLetters[2].ToString();
+            letterBtn4.Text = _randomLetters[3].ToString();
+            letterBtn5.Text = _randomLetters[4].ToString();
+            letterBtn6.Text = _randomLetters[5].ToString();
+            letterBtn7.Text = _randomLetters[6].ToString();
         }
 
         private void letterBtn1_Click(object sender, EventArgs e)

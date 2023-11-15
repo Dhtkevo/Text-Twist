@@ -51,15 +51,18 @@
             // 
             // userWordTxtbox
             // 
-            userWordTxtbox.Location = new Point(322, 328);
+            userWordTxtbox.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
+            userWordTxtbox.Location = new Point(295, 263);
             userWordTxtbox.Name = "userWordTxtbox";
-            userWordTxtbox.Size = new Size(168, 23);
+            userWordTxtbox.ReadOnly = true;
+            userWordTxtbox.Size = new Size(195, 31);
             userWordTxtbox.TabIndex = 1;
+            userWordTxtbox.TabStop = false;
             // 
             // letterBtn1
             // 
             letterBtn1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            letterBtn1.Location = new Point(171, 249);
+            letterBtn1.Location = new Point(171, 314);
             letterBtn1.Name = "letterBtn1";
             letterBtn1.Size = new Size(47, 37);
             letterBtn1.TabIndex = 2;
@@ -70,7 +73,7 @@
             // letterBtn2
             // 
             letterBtn2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            letterBtn2.Location = new Point(242, 249);
+            letterBtn2.Location = new Point(242, 314);
             letterBtn2.Name = "letterBtn2";
             letterBtn2.Size = new Size(47, 37);
             letterBtn2.TabIndex = 3;
@@ -81,7 +84,7 @@
             // letterBtn3
             // 
             letterBtn3.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            letterBtn3.Location = new Point(312, 249);
+            letterBtn3.Location = new Point(311, 314);
             letterBtn3.Name = "letterBtn3";
             letterBtn3.Size = new Size(47, 37);
             letterBtn3.TabIndex = 4;
@@ -92,7 +95,7 @@
             // letterBtn4
             // 
             letterBtn4.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            letterBtn4.Location = new Point(388, 249);
+            letterBtn4.Location = new Point(376, 314);
             letterBtn4.Name = "letterBtn4";
             letterBtn4.Size = new Size(47, 37);
             letterBtn4.TabIndex = 5;
@@ -103,7 +106,7 @@
             // letterBtn5
             // 
             letterBtn5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            letterBtn5.Location = new Point(463, 249);
+            letterBtn5.Location = new Point(443, 314);
             letterBtn5.Name = "letterBtn5";
             letterBtn5.Size = new Size(47, 37);
             letterBtn5.TabIndex = 6;
@@ -114,7 +117,7 @@
             // letterBtn6
             // 
             letterBtn6.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            letterBtn6.Location = new Point(535, 249);
+            letterBtn6.Location = new Point(508, 314);
             letterBtn6.Name = "letterBtn6";
             letterBtn6.Size = new Size(47, 37);
             letterBtn6.TabIndex = 7;
@@ -125,7 +128,7 @@
             // letterBtn7
             // 
             letterBtn7.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            letterBtn7.Location = new Point(607, 249);
+            letterBtn7.Location = new Point(573, 314);
             letterBtn7.Name = "letterBtn7";
             letterBtn7.Size = new Size(47, 37);
             letterBtn7.TabIndex = 8;
