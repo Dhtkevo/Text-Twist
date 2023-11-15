@@ -35,7 +35,7 @@ namespace KevinMaduProject2
             if (letterBtn1.Enabled == true)
             {
                 userWordTxtbox.Text += letterBtn1.Text;
-            } 
+            }
 
             letterBtn1.Enabled = false;
         }
@@ -98,6 +98,30 @@ namespace KevinMaduProject2
             }
 
             letterBtn7.Enabled = false;
+        }
+
+        private void submitWordBtn_Click(object sender, EventArgs e)
+        {
+            // If textbox is empty, do nothing
+            // If textbox not empty, add word to display
+            // enable all random letter buttons
+            if (userWordTxtbox.Text == string.Empty) return;
+           
+            displayTxtbox.Text += $"{userWordTxtbox.Text} {Environment.NewLine}";
+            userWordTxtbox.Text = "";
+
+            EnableRandomLetterButtons();
+        }
+
+        private void EnableRandomLetterButtons()
+        {
+            letterBtn1.Enabled = true;
+            letterBtn2.Enabled = true;
+            letterBtn3.Enabled = true;
+            letterBtn4.Enabled = true;
+            letterBtn5.Enabled = true;
+            letterBtn6.Enabled = true;
+            letterBtn7.Enabled = true;
         }
     }
 }

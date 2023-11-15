@@ -37,6 +37,7 @@
             letterBtn5 = new Button();
             letterBtn6 = new Button();
             letterBtn7 = new Button();
+            submitWordBtn = new Button();
             SuspendLayout();
             // 
             // displayTxtbox
@@ -136,11 +137,23 @@
             letterBtn7.UseVisualStyleBackColor = true;
             letterBtn7.Click += letterBtn7_Click;
             // 
+            // submitWordBtn
+            // 
+            submitWordBtn.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            submitWordBtn.Location = new Point(508, 258);
+            submitWordBtn.Name = "submitWordBtn";
+            submitWordBtn.Size = new Size(75, 40);
+            submitWordBtn.TabIndex = 9;
+            submitWordBtn.Text = "Submit";
+            submitWordBtn.UseVisualStyleBackColor = true;
+            submitWordBtn.Click += submitWordBtn_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(submitWordBtn);
             Controls.Add(letterBtn7);
             Controls.Add(letterBtn6);
             Controls.Add(letterBtn5);
@@ -167,5 +180,6 @@
         private Button letterBtn5;
         private Button letterBtn6;
         private Button letterBtn7;
+        private Button submitWordBtn;
     }
 }
