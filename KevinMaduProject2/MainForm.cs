@@ -17,6 +17,9 @@ namespace KevinMaduProject2
 
             // Make text of each button corresponding random letter
             PopulateLetterButtons();
+
+            // Disable submit button when application is first launched
+            submitWordBtn.Enabled = false;
         }
 
         private void PopulateLetterButtons()
@@ -38,6 +41,9 @@ namespace KevinMaduProject2
             }
 
             letterBtn1.Enabled = false;
+
+            CheckWordAtleastThreeCharacters();
+
         }
 
         private void letterBtn2_Click(object sender, EventArgs e)
@@ -48,6 +54,9 @@ namespace KevinMaduProject2
             }
 
             letterBtn2.Enabled = false;
+
+            CheckWordAtleastThreeCharacters();
+
         }
 
         private void letterBtn3_Click(object sender, EventArgs e)
@@ -58,6 +67,9 @@ namespace KevinMaduProject2
             }
 
             letterBtn3.Enabled = false;
+
+            CheckWordAtleastThreeCharacters();
+
         }
 
         private void letterBtn4_Click(object sender, EventArgs e)
@@ -68,6 +80,9 @@ namespace KevinMaduProject2
             }
 
             letterBtn4.Enabled = false;
+
+            CheckWordAtleastThreeCharacters();
+
         }
 
         private void letterBtn5_Click(object sender, EventArgs e)
@@ -78,6 +93,9 @@ namespace KevinMaduProject2
             }
 
             letterBtn5.Enabled = false;
+
+            CheckWordAtleastThreeCharacters();
+
         }
 
         private void letterBtn6_Click(object sender, EventArgs e)
@@ -88,6 +106,9 @@ namespace KevinMaduProject2
             }
 
             letterBtn6.Enabled = false;
+
+            CheckWordAtleastThreeCharacters();
+
         }
 
         private void letterBtn7_Click(object sender, EventArgs e)
@@ -98,17 +119,27 @@ namespace KevinMaduProject2
             }
 
             letterBtn7.Enabled = false;
+
+            CheckWordAtleastThreeCharacters();
+        }
+
+        private void CheckWordAtleastThreeCharacters()
+        {
+            if (userWordTxtbox.Text.Length >= 3)
+            {
+                submitWordBtn.Enabled = true;
+            }
         }
 
         private void submitWordBtn_Click(object sender, EventArgs e)
         {
-            // If textbox is empty, do nothing
             // If textbox not empty, add word to display
             // enable all random letter buttons
-            if (userWordTxtbox.Text == string.Empty) return;
-           
+            // disable submit button after submitting word
+            
             displayTxtbox.Text += $"{userWordTxtbox.Text} {Environment.NewLine}";
             userWordTxtbox.Text = "";
+            submitWordBtn.Enabled = false;
 
             EnableRandomLetterButtons();
         }
