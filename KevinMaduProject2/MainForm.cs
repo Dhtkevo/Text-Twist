@@ -7,6 +7,7 @@ namespace KevinMaduProject2
 
         private TextTwist _textTwist;
         private List<char> _randomLetters;
+
         public MainForm()
         {
             InitializeComponent();
@@ -31,36 +32,71 @@ namespace KevinMaduProject2
 
         private void letterBtn1_Click(object sender, EventArgs e)
         {
+            if (letterBtn1.Enabled == true)
+            {
+                userWordTxtbox.Text += letterBtn1.Text;
+            } 
+
             letterBtn1.Enabled = false;
         }
 
         private void letterBtn2_Click(object sender, EventArgs e)
         {
+            if (letterBtn2.Enabled == true)
+            {
+                userWordTxtbox.Text += letterBtn2.Text;
+            }
+
             letterBtn2.Enabled = false;
         }
 
         private void letterBtn3_Click(object sender, EventArgs e)
         {
+            if (letterBtn3.Enabled == true)
+            {
+                userWordTxtbox.Text += letterBtn3.Text;
+            }
+
             letterBtn3.Enabled = false;
         }
 
         private void letterBtn4_Click(object sender, EventArgs e)
         {
+            if (letterBtn4.Enabled == true)
+            {
+                userWordTxtbox.Text += letterBtn4.Text;
+            }
+
             letterBtn4.Enabled = false;
         }
 
         private void letterBtn5_Click(object sender, EventArgs e)
         {
+            if (letterBtn5.Enabled == true)
+            {
+                userWordTxtbox.Text += letterBtn5.Text;
+            }
+
             letterBtn5.Enabled = false;
         }
 
         private void letterBtn6_Click(object sender, EventArgs e)
         {
+            if (letterBtn6.Enabled == true)
+            {
+                userWordTxtbox.Text += letterBtn6.Text;
+            }
+
             letterBtn6.Enabled = false;
         }
 
         private void letterBtn7_Click(object sender, EventArgs e)
         {
+            if (letterBtn7.Enabled == true)
+            {
+                userWordTxtbox.Text += letterBtn7.Text;
+            }
+
             letterBtn7.Enabled = false;
         }
     }
