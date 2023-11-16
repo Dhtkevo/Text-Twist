@@ -38,6 +38,8 @@
             letterBtn6 = new Button();
             letterBtn7 = new Button();
             submitWordBtn = new Button();
+            validWordLbl = new Label();
+            invalidWordLbl = new Label();
             SuspendLayout();
             // 
             // displayTxtbox
@@ -148,11 +150,37 @@
             submitWordBtn.UseVisualStyleBackColor = true;
             submitWordBtn.Click += submitWordBtn_Click;
             // 
+            // validWordLbl
+            // 
+            validWordLbl.AutoSize = true;
+            validWordLbl.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            validWordLbl.ForeColor = Color.LimeGreen;
+            validWordLbl.Location = new Point(171, 375);
+            validWordLbl.Name = "validWordLbl";
+            validWordLbl.Size = new Size(236, 37);
+            validWordLbl.TabIndex = 10;
+            validWordLbl.Text = "90 POINTS FOR ''";
+            validWordLbl.Visible = false;
+            // 
+            // invalidWordLbl
+            // 
+            invalidWordLbl.AutoSize = true;
+            invalidWordLbl.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            invalidWordLbl.ForeColor = Color.Red;
+            invalidWordLbl.Location = new Point(171, 375);
+            invalidWordLbl.Name = "invalidWordLbl";
+            invalidWordLbl.Size = new Size(347, 37);
+            invalidWordLbl.TabIndex = 11;
+            invalidWordLbl.Text = "' ' IS NOT A VALID WORD!";
+            invalidWordLbl.Visible = false;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(invalidWordLbl);
+            Controls.Add(validWordLbl);
             Controls.Add(submitWordBtn);
             Controls.Add(letterBtn7);
             Controls.Add(letterBtn6);
@@ -181,5 +209,7 @@
         private Button letterBtn6;
         private Button letterBtn7;
         private Button submitWordBtn;
+        private Label validWordLbl;
+        private Label invalidWordLbl;
     }
 }

@@ -132,12 +132,28 @@ namespace KevinMaduProject2
 
         private void submitWordBtn_Click(object sender, EventArgs e)
         {
-            
+
             var userWord = userWordTxtbox.Text;
 
             if (_textTwist.CheckWordIsValid(userWord))
             {
+                // Show valid label with word in it or invalid with word in it
+                // Determine amount of points word is worth
+
+                invalidWordLbl.Text = "";
+                invalidWordLbl.Visible = false;
+
+                validWordLbl.Text = $"Points for word '{userWord}'";
+                validWordLbl.Visible = true;
+
                 _textTwist.UserWords.Add(userWord);
+            }
+            else
+            {
+                validWordLbl.Text = "";
+                validWordLbl.Visible = false;
+                invalidWordLbl.Text = $"'{userWord}' is not a valid word!";
+                invalidWordLbl.Visible = true;
             }
 
             PopulateDisplayUserWords();
