@@ -40,8 +40,19 @@ namespace KevinMaduProject2.Driver
             GenerateSevenRandomLetters();
         }
 
+        public bool CheckDuplicatedWord(string wordToBeChecked)
+        {
+            if (UserWords.Contains(wordToBeChecked))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public int DetermineWordScore(string wordToBeScored)
         {
+
             var pointsToAdd = 0;
             // Determine amount of points word is worth
             if (wordToBeScored.Length == 3)

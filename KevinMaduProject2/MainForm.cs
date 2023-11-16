@@ -143,6 +143,26 @@ namespace KevinMaduProject2
 
             var userWord = userWordTxtbox.Text;
 
+            HandleWordFeedback(userWord);
+
+
+            PopulateDisplayUserWords();
+
+            userWordTxtbox.Text = "";
+            submitWordBtn.Enabled = false;
+
+            EnableRandomLetterButtons();
+        }
+
+        private void HandleWordFeedback(string userWord)
+        {
+            if (_textTwist.CheckDuplicatedWord(userWord))
+            {
+                duplicateWordLbl.Text = $"You already entered the word '{userWord}'";
+                duplicateWordLbl.Visible = true;
+                return;
+            }
+
             if (_textTwist.CheckWordIsValid(userWord))
             {
                 // Show valid label with word in it or invalid with word in it
@@ -155,6 +175,8 @@ namespace KevinMaduProject2
                 validWordLbl.Text = $"{points} Points for word '{userWord}'";
                 validWordLbl.Visible = true;
 
+                duplicateWordLbl.Visible = false;
+
                 _textTwist.UserWords.Add(userWord);
 
                 UpdateScore();
@@ -163,17 +185,12 @@ namespace KevinMaduProject2
             {
                 validWordLbl.Text = "";
                 validWordLbl.Visible = false;
+
                 invalidWordLbl.Text = $"'{userWord}' is not a valid word!";
                 invalidWordLbl.Visible = true;
+
+                duplicateWordLbl.Visible = false;
             }
-
-
-            PopulateDisplayUserWords();
-
-            userWordTxtbox.Text = "";
-            submitWordBtn.Enabled = false;
-
-            EnableRandomLetterButtons();
         }
 
         private void PopulateDisplayUserWords()
