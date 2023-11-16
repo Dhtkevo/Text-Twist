@@ -46,6 +46,7 @@
             // 
             // displayTxtbox
             // 
+            displayTxtbox.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             displayTxtbox.Location = new Point(127, 50);
             displayTxtbox.Multiline = true;
             displayTxtbox.Name = "displayTxtbox";
