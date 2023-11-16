@@ -3,23 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KevinMaduProject2.Model;
+using KevinMaduProject2.Utilities;
 
 namespace KevinMaduProject2.Driver
 {
     public class TextTwist
     {
-        public List<char> Letters; 
+        public List<char> Letters { get; } 
 
-        public List<char> RandomLetters;
+        public List<char> RandomLetters { get; }
+
+        public List<string> UserWords { get; }
+
+        private List<Dictionary> _dictionaries;
 
 
         public TextTwist()
         {
             Letters = new List<char>();
             RandomLetters = new List<char>();
+            _dictionaries = new DataImporter().ReadFile();
+            UserWords = new List<string>();
 
             PopulateLetters();
             GenerateSevenRandomLetters();
+        }
+
+        public bool CheckWordIsValid(string userWord)
+        {
+            foreach (Dictionary dict in _dictionaries)
+            {
+                if (dict.Letter.ToLower() == userWord[0].ToString().ToLower())
+                {
+                    foreach (string word in dict.Words)
+                    {
+                        if (word == userWord.ToLower())
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
         }
 
         public void GenerateSevenRandomLetters()
