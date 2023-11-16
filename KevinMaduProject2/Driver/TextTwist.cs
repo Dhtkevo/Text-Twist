@@ -10,6 +10,15 @@ namespace KevinMaduProject2.Driver
 {
     public class TextTwist
     {
+        private int _score;
+
+        public int Score
+        {
+            get
+            {
+                return _score;
+            }
+        }
         public List<char> Letters { get; } 
 
         public List<char> RandomLetters { get; }
@@ -21,6 +30,7 @@ namespace KevinMaduProject2.Driver
 
         public TextTwist()
         {
+            _score = 0;
             Letters = new List<char>();
             RandomLetters = new List<char>();
             _dictionaries = new DataImporter().ReadFile();
@@ -28,6 +38,44 @@ namespace KevinMaduProject2.Driver
 
             PopulateLetters();
             GenerateSevenRandomLetters();
+        }
+
+        public int DetermineWordScore(string wordToBeScored)
+        {
+            var pointsToAdd = 0;
+            // Determine amount of points word is worth
+            if (wordToBeScored.Length == 3)
+            {
+                pointsToAdd = 90;
+            }
+            else if (wordToBeScored.Length == 4)
+            {
+                pointsToAdd = 160;
+
+            }
+            else if (wordToBeScored.Length == 5)
+            {
+                pointsToAdd = 250;
+
+            }
+            else if (wordToBeScored.Length == 6)
+            {
+                pointsToAdd = 360;
+
+            }
+            else
+            {
+                pointsToAdd = 490;
+            }
+
+            AddToScore(pointsToAdd);
+
+            return pointsToAdd;
+        }
+
+        private void AddToScore(int points)
+        {
+            _score += points;
         }
 
         public bool CheckWordIsValid(string userWord)

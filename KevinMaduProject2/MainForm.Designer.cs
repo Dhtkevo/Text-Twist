@@ -40,6 +40,7 @@
             submitWordBtn = new Button();
             validWordLbl = new Label();
             invalidWordLbl = new Label();
+            scoreLbl = new Label();
             SuspendLayout();
             // 
             // displayTxtbox
@@ -174,11 +175,22 @@
             invalidWordLbl.Text = "' ' IS NOT A VALID WORD!";
             invalidWordLbl.Visible = false;
             // 
+            // scoreLbl
+            // 
+            scoreLbl.AutoSize = true;
+            scoreLbl.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            scoreLbl.Location = new Point(127, 263);
+            scoreLbl.Name = "scoreLbl";
+            scoreLbl.Size = new Size(95, 30);
+            scoreLbl.TabIndex = 12;
+            scoreLbl.Text = "Score: 0";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(scoreLbl);
             Controls.Add(invalidWordLbl);
             Controls.Add(validWordLbl);
             Controls.Add(submitWordBtn);
@@ -211,5 +223,6 @@
         private Button submitWordBtn;
         private Label validWordLbl;
         private Label invalidWordLbl;
+        private Label scoreLbl;
     }
 }

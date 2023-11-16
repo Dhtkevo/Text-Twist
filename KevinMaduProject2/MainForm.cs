@@ -14,11 +14,19 @@ namespace KevinMaduProject2
 
             _textTwist = new TextTwist();
 
+            // Set score label
+            UpdateScore();
+
             // Make text of each button corresponding random letter
             PopulateLetterButtons();
 
             // Disable submit button when application is first launched
             submitWordBtn.Enabled = false;
+        }
+
+        private void UpdateScore()
+        {
+            scoreLbl.Text = $"Score: {_textTwist.Score}";
         }
 
         private void PopulateLetterButtons()
@@ -138,15 +146,18 @@ namespace KevinMaduProject2
             if (_textTwist.CheckWordIsValid(userWord))
             {
                 // Show valid label with word in it or invalid with word in it
-                // Determine amount of points word is worth
+
+                var points = _textTwist.DetermineWordScore(userWord);
 
                 invalidWordLbl.Text = "";
                 invalidWordLbl.Visible = false;
 
-                validWordLbl.Text = $"Points for word '{userWord}'";
+                validWordLbl.Text = $"{points} Points for word '{userWord}'";
                 validWordLbl.Visible = true;
 
                 _textTwist.UserWords.Add(userWord);
+
+                UpdateScore();
             }
             else
             {
@@ -155,6 +166,7 @@ namespace KevinMaduProject2
                 invalidWordLbl.Text = $"'{userWord}' is not a valid word!";
                 invalidWordLbl.Visible = true;
             }
+
 
             PopulateDisplayUserWords();
 
