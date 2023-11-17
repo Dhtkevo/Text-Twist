@@ -1,5 +1,10 @@
 using KevinMaduProject2.Driver;
+using KevinMaduProject2.Model;
 using KevinMaduProject2.Utilities;
+using System.Reflection.Emit;
+using System.Timers;
+using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace KevinMaduProject2
 {
@@ -7,6 +12,11 @@ namespace KevinMaduProject2
     {
 
         private TextTwist _textTwist;
+
+        private Clock _clock;
+
+        private Timer Timer1;
+
 
         public MainForm()
         {
@@ -22,6 +32,12 @@ namespace KevinMaduProject2
 
             // Disable submit button when application is first launched
             submitWordBtn.Enabled = false;
+
+            _clock = new Clock();
+
+            Timer1 = new System.Windows.Forms.Timer();
+
+            SetUpTimer();
         }
 
         private void UpdateScore()
@@ -212,5 +228,38 @@ namespace KevinMaduProject2
             letterBtn6.Enabled = true;
             letterBtn7.Enabled = true;
         }
+
+        private void DisableRandomLetterButtons()
+        {
+            letterBtn1.Enabled = false;
+            letterBtn2.Enabled = false;
+            letterBtn3.Enabled = false;
+            letterBtn4.Enabled = false;
+            letterBtn5.Enabled = false;
+            letterBtn6.Enabled = false;
+            letterBtn7.Enabled = false;
+        }
+
+        private void SetUpTimer()
+        {
+            Timer1.Interval = 1000;
+            Timer1.Tick += new EventHandler(Timer1_Tick);
+
+            Timer1.Enabled = true;
+        }
+        private void Timer1_Tick(object Sender, EventArgs e)
+        {
+            if (_clock.CheckOutOfTime())
+            {
+                Timer1.Enabled = false;
+                DisableRandomLetterButtons();
+                MessageBox.Show("Round Over!");
+                return;
+            }
+
+            _clock.DecrementClock();
+            timerLbl.Text = _clock.TimeInSeconds.ToString();
+        }
+
     }
 }

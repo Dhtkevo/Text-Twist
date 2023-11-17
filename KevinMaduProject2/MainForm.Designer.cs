@@ -42,6 +42,7 @@
             invalidWordLbl = new Label();
             scoreLbl = new Label();
             duplicateWordLbl = new Label();
+            timerLbl = new Label();
             SuspendLayout();
             // 
             // displayTxtbox
@@ -199,11 +200,22 @@
             duplicateWordLbl.Text = "You already entered the word ''";
             duplicateWordLbl.Visible = false;
             // 
+            // timerLbl
+            // 
+            timerLbl.AutoSize = true;
+            timerLbl.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            timerLbl.Location = new Point(598, 263);
+            timerLbl.Name = "timerLbl";
+            timerLbl.Size = new Size(80, 30);
+            timerLbl.TabIndex = 14;
+            timerLbl.Text = "Timer:";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(timerLbl);
             Controls.Add(duplicateWordLbl);
             Controls.Add(scoreLbl);
             Controls.Add(invalidWordLbl);
@@ -240,5 +252,6 @@
         private Label invalidWordLbl;
         private Label scoreLbl;
         private Label duplicateWordLbl;
+        private Label timerLbl;
     }
 }
