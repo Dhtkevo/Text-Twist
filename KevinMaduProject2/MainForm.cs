@@ -258,7 +258,7 @@ namespace KevinMaduProject2
             }
 
             _clock.DecrementClock();
-            timerLbl.Text = _clock.TimeInSeconds.ToString();
+            timerLbl.Text = $"Time Remaining: {_clock.TimeInSeconds.ToString()} seconds";
         }
 
     }

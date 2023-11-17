@@ -59,7 +59,7 @@
             // userWordTxtbox
             // 
             userWordTxtbox.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
-            userWordTxtbox.Location = new Point(295, 263);
+            userWordTxtbox.Location = new Point(344, 262);
             userWordTxtbox.Name = "userWordTxtbox";
             userWordTxtbox.ReadOnly = true;
             userWordTxtbox.Size = new Size(195, 31);
@@ -146,7 +146,7 @@
             // submitWordBtn
             // 
             submitWordBtn.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            submitWordBtn.Location = new Point(508, 258);
+            submitWordBtn.Location = new Point(545, 258);
             submitWordBtn.Name = "submitWordBtn";
             submitWordBtn.Size = new Size(75, 40);
             submitWordBtn.TabIndex = 9;
@@ -182,7 +182,7 @@
             // 
             scoreLbl.AutoSize = true;
             scoreLbl.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            scoreLbl.Location = new Point(127, 263);
+            scoreLbl.Location = new Point(634, 263);
             scoreLbl.Name = "scoreLbl";
             scoreLbl.Size = new Size(95, 30);
             scoreLbl.TabIndex = 12;
@@ -204,11 +204,11 @@
             // 
             timerLbl.AutoSize = true;
             timerLbl.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            timerLbl.Location = new Point(598, 263);
+            timerLbl.Location = new Point(3, 263);
             timerLbl.Name = "timerLbl";
-            timerLbl.Size = new Size(80, 30);
+            timerLbl.Size = new Size(185, 30);
             timerLbl.TabIndex = 14;
-            timerLbl.Text = "Timer:";
+            timerLbl.Text = "Time Remaining:";
             // 
             // MainForm
             // 
