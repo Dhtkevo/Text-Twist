@@ -49,6 +49,8 @@
             twoMinutesMenuItem = new ToolStripMenuItem();
             threeMinutesMenuItem = new ToolStripMenuItem();
             twistLettersMenuItem = new ToolStripMenuItem();
+            gameToolStripMenuItem = new ToolStripMenuItem();
+            newGameToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -220,7 +222,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { timerToolStripMenuItem, twistLettersMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { gameToolStripMenuItem, timerToolStripMenuItem, twistLettersMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -238,21 +240,21 @@
             // oneMinuteMenuItem
             // 
             oneMinuteMenuItem.Name = "oneMinuteMenuItem";
-            oneMinuteMenuItem.Size = new Size(180, 22);
+            oneMinuteMenuItem.Size = new Size(126, 22);
             oneMinuteMenuItem.Text = "1 Minute";
             oneMinuteMenuItem.Click += oneMinuteMenuItem_Click;
             // 
             // twoMinutesMenuItem
             // 
             twoMinutesMenuItem.Name = "twoMinutesMenuItem";
-            twoMinutesMenuItem.Size = new Size(180, 22);
+            twoMinutesMenuItem.Size = new Size(126, 22);
             twoMinutesMenuItem.Text = "2 Minutes";
             twoMinutesMenuItem.Click += twoMinutesMenuItem_Click;
             // 
             // threeMinutesMenuItem
             // 
             threeMinutesMenuItem.Name = "threeMinutesMenuItem";
-            threeMinutesMenuItem.Size = new Size(180, 22);
+            threeMinutesMenuItem.Size = new Size(126, 22);
             threeMinutesMenuItem.Text = "3 Minutes";
             threeMinutesMenuItem.Click += threeMinutesMenuItem_Click;
             // 
@@ -263,6 +265,20 @@
             twistLettersMenuItem.Size = new Size(83, 20);
             twistLettersMenuItem.Text = "Twist Letters";
             twistLettersMenuItem.Click += twistLettersMenuItem_Click;
+            // 
+            // gameToolStripMenuItem
+            // 
+            gameToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newGameToolStripMenuItem });
+            gameToolStripMenuItem.Name = "gameToolStripMenuItem";
+            gameToolStripMenuItem.Size = new Size(50, 20);
+            gameToolStripMenuItem.Text = "Game";
+            // 
+            // newGameToolStripMenuItem
+            // 
+            newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            newGameToolStripMenuItem.Size = new Size(180, 22);
+            newGameToolStripMenuItem.Text = "New Game";
+            newGameToolStripMenuItem.Click += newGameToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -317,5 +333,7 @@
         private ToolStripMenuItem twoMinutesMenuItem;
         private ToolStripMenuItem threeMinutesMenuItem;
         private ToolStripMenuItem twistLettersMenuItem;
+        private ToolStripMenuItem gameToolStripMenuItem;
+        private ToolStripMenuItem newGameToolStripMenuItem;
     }
 }

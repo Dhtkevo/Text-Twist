@@ -46,13 +46,13 @@ namespace KevinMaduProject2
 
         private void PopulateLetterButtons()
         {
-            letterBtn1.Text = _textTwist.RandomLetters[0].ToString();
-            letterBtn2.Text = _textTwist.RandomLetters[1].ToString();
-            letterBtn3.Text = _textTwist.RandomLetters[2].ToString();
-            letterBtn4.Text = _textTwist.RandomLetters[3].ToString();
-            letterBtn5.Text = _textTwist.RandomLetters[4].ToString();
-            letterBtn6.Text = _textTwist.RandomLetters[5].ToString();
-            letterBtn7.Text = _textTwist.RandomLetters[6].ToString();
+            letterBtn1.Text = _textTwist.Round.RandomLetters[0].ToString();
+            letterBtn2.Text = _textTwist.Round.RandomLetters[1].ToString();
+            letterBtn3.Text = _textTwist.Round.RandomLetters[2].ToString();
+            letterBtn4.Text = _textTwist.Round.RandomLetters[3].ToString();
+            letterBtn5.Text = _textTwist.Round.RandomLetters[4].ToString();
+            letterBtn6.Text = _textTwist.Round.RandomLetters[5].ToString();
+            letterBtn7.Text = _textTwist.Round.RandomLetters[6].ToString();
         }
 
         private void letterBtn1_Click(object sender, EventArgs e)
@@ -176,6 +176,9 @@ namespace KevinMaduProject2
 
                 duplicateWordLbl.Text = $"You already entered the word '{userWord}'";
                 duplicateWordLbl.Visible = true;
+
+                invalidWordLbl.Visible = false;
+                validWordLbl.Visible = false;
                 return;
             }
 
@@ -301,8 +304,24 @@ namespace KevinMaduProject2
 
         private void twistLettersMenuItem_Click(object sender, EventArgs e)
         {
-            _textTwist.Twist();
+            _textTwist.Round.Twist();
             PopulateLetterButtons();
+        }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _textTwist.SaveRoundHistory();
+            _textTwist.CreateNewRound();
+            PopulateLetterButtons();
+            UpdateScore();
+            HideAllFeedbackLabels();
+        }
+
+        private void HideAllFeedbackLabels()
+        {
+            duplicateWordLbl.Visible = false;
+            invalidWordLbl.Visible = false;
+            validWordLbl.Visible = false;
         }
     }
 }
