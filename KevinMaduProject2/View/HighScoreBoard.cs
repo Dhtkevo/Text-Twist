@@ -48,5 +48,12 @@ namespace KevinMaduProject2.View
             highScoreTxtbox.Text = "";
             PopulateBoard();
         }
+
+        private void resetHighScoreBoardBtn_Click(object sender, EventArgs e)
+        {
+            _rounds.Clear();
+            highScoreTxtbox.Text = "";
+            PopulateBoard();
+        }
     }
 }

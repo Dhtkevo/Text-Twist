@@ -71,6 +71,7 @@
             resetHighScoreBoardBtn.TabIndex = 3;
             resetHighScoreBoardBtn.Text = "Reset Board";
             resetHighScoreBoardBtn.UseVisualStyleBackColor = true;
+            resetHighScoreBoardBtn.Click += resetHighScoreBoardBtn_Click;
             // 
             // HighScoreBoard
             // 
