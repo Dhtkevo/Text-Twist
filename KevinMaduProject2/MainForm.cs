@@ -323,5 +323,10 @@ namespace KevinMaduProject2
             invalidWordLbl.Visible = false;
             validWordLbl.Visible = false;
         }
+
+        private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

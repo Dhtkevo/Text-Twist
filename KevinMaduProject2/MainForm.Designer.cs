@@ -44,13 +44,14 @@
             duplicateWordLbl = new Label();
             timerLbl = new Label();
             menuStrip1 = new MenuStrip();
+            gameToolStripMenuItem = new ToolStripMenuItem();
+            newGameToolStripMenuItem = new ToolStripMenuItem();
+            exitGameToolStripMenuItem = new ToolStripMenuItem();
             timerToolStripMenuItem = new ToolStripMenuItem();
             oneMinuteMenuItem = new ToolStripMenuItem();
             twoMinutesMenuItem = new ToolStripMenuItem();
             threeMinutesMenuItem = new ToolStripMenuItem();
             twistLettersMenuItem = new ToolStripMenuItem();
-            gameToolStripMenuItem = new ToolStripMenuItem();
-            newGameToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -229,6 +230,30 @@
             menuStrip1.TabIndex = 15;
             menuStrip1.Text = "menuStrip1";
             // 
+            // gameToolStripMenuItem
+            // 
+            gameToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newGameToolStripMenuItem, exitGameToolStripMenuItem });
+            gameToolStripMenuItem.Name = "gameToolStripMenuItem";
+            gameToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.G;
+            gameToolStripMenuItem.Size = new Size(50, 20);
+            gameToolStripMenuItem.Text = "Game";
+            // 
+            // newGameToolStripMenuItem
+            // 
+            newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            newGameToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.N;
+            newGameToolStripMenuItem.Size = new Size(180, 22);
+            newGameToolStripMenuItem.Text = "New Game";
+            newGameToolStripMenuItem.Click += newGameToolStripMenuItem_Click;
+            // 
+            // exitGameToolStripMenuItem
+            // 
+            exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
+            exitGameToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.Q;
+            exitGameToolStripMenuItem.Size = new Size(180, 22);
+            exitGameToolStripMenuItem.Text = "Exit Game";
+            exitGameToolStripMenuItem.Click += exitGameToolStripMenuItem_Click;
+            // 
             // timerToolStripMenuItem
             // 
             timerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { oneMinuteMenuItem, twoMinutesMenuItem, threeMinutesMenuItem });
@@ -265,20 +290,6 @@
             twistLettersMenuItem.Size = new Size(83, 20);
             twistLettersMenuItem.Text = "Twist Letters";
             twistLettersMenuItem.Click += twistLettersMenuItem_Click;
-            // 
-            // gameToolStripMenuItem
-            // 
-            gameToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newGameToolStripMenuItem });
-            gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            gameToolStripMenuItem.Size = new Size(50, 20);
-            gameToolStripMenuItem.Text = "Game";
-            // 
-            // newGameToolStripMenuItem
-            // 
-            newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            newGameToolStripMenuItem.Size = new Size(180, 22);
-            newGameToolStripMenuItem.Text = "New Game";
-            newGameToolStripMenuItem.Click += newGameToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -335,5 +346,6 @@
         private ToolStripMenuItem twistLettersMenuItem;
         private ToolStripMenuItem gameToolStripMenuItem;
         private ToolStripMenuItem newGameToolStripMenuItem;
+        private ToolStripMenuItem exitGameToolStripMenuItem;
     }
 }
