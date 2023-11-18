@@ -10,12 +10,13 @@ namespace KevinMaduProject2.Model.Word
     {
         public string Text { get; }
 
-        public DateTime GameTime { get; }
+        public int GameTime { get; }
 
-        public Word(string text, DateTime time)
+        public Word(string text, int time)
         {
             if (string.IsNullOrWhiteSpace(text)) throw new ArgumentException(nameof(text));
             if (text.Length < 3) throw new ArgumentException("Word must be atleast 3 characters long");
+            if (time < 0) throw new ArgumentException("Time is not valid");
 
             Text = text;
             GameTime = time;

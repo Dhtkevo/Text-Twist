@@ -1,5 +1,6 @@
 using KevinMaduProject2.Driver;
 using KevinMaduProject2.Model;
+using KevinMaduProject2.Model.Word;
 using KevinMaduProject2.Utilities;
 using System.Reflection.Emit;
 using System.Timers;
@@ -172,8 +173,10 @@ namespace KevinMaduProject2
 
         private void HandleWordFeedback(string userWord)
         {
-            if (_textTwist.CheckDuplicatedWord(userWord))
+            if (_textTwist.Round.CheckDuplicatedWord(userWord))
             {
+                _textTwist.Round.AddToInvalidWords(userWord, InvalidWordReasons.WordAlreadyEntered);
+
                 duplicateWordLbl.Text = $"You already entered the word '{userWord}'";
                 duplicateWordLbl.Visible = true;
                 return;
@@ -184,6 +187,7 @@ namespace KevinMaduProject2
                 // Show valid label with word in it or invalid with word in it
 
                 var points = _textTwist.Round.DetermineWordScore(userWord);
+                _textTwist.Round.AddToScore(points);
 
                 invalidWordLbl.Text = "";
                 invalidWordLbl.Visible = false;
@@ -193,12 +197,16 @@ namespace KevinMaduProject2
 
                 duplicateWordLbl.Visible = false;
 
-                _textTwist.UserWords.Add(userWord);
+                // _textTwist.UserWords.Add(userWord);
+                _textTwist.Round.AddToValidWords(userWord);
 
                 UpdateScore();
             }
             else
             {
+                // Come back and update this method. Need to get clock time
+                _textTwist.Round.AddToInvalidWords(userWord, InvalidWordReasons.NotInDictionary);
+
                 validWordLbl.Text = "";
                 validWordLbl.Visible = false;
 
@@ -212,9 +220,9 @@ namespace KevinMaduProject2
         private void PopulateDisplayUserWords()
         {
             displayTxtbox.Text = "";
-            foreach (string word in _textTwist.UserWords)
+            foreach (ValidWord word in _textTwist.Round.ValidWords)
             {
-                displayTxtbox.Text += $"{word}{Environment.NewLine}";
+                displayTxtbox.Text += $"{word.Text}{Environment.NewLine}";
             }
         }
 

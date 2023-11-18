@@ -10,7 +10,7 @@ namespace KevinMaduProject2.Model.Word
     {
         public string Reason { get; set; }
 
-        public InvalidWord(string text, DateTime time, string reason) : base(text, time)
+        public InvalidWord(string text, int time, string reason) : base(text, time)
         {
             if (string.IsNullOrWhiteSpace(reason)) throw new ArgumentException("Must give reason why word is invalid");
 

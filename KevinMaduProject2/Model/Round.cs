@@ -20,6 +20,7 @@ namespace KevinMaduProject2.Model
         }
 
         public List<ValidWord>ValidWords { get; }
+
         public List<InvalidWord> InvalidWords { get; }
 
         public Round()
@@ -58,14 +59,39 @@ namespace KevinMaduProject2.Model
                 pointsToAdd = 490;
             }
 
-            AddToScore(pointsToAdd);
-
             return pointsToAdd;
         }
 
-        private void AddToScore(int points)
+        public void AddToScore(int points)
         {
             _score += points;
+        }
+
+        public void AddToValidWords(string word)
+        {
+            var points = DetermineWordScore(word);
+            var time = DateTime.Now;
+            var valid = new ValidWord(word, time, points);
+            ValidWords.Add(valid);
+        }
+
+        public void AddToInvalidWords(string word, string reason)
+        {
+            var time = DateTime.Now;
+            var invalid = new InvalidWord(word, time, reason);
+        }
+
+        public bool CheckDuplicatedWord(string wordToBeChecked)
+        {
+            foreach (ValidWord word in ValidWords)
+            {
+                if (word.Text == wordToBeChecked)
+                {
+                    return true;
+                }
+            }
+            
+            return false;
         }
 
     }

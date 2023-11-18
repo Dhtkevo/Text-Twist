@@ -32,19 +32,7 @@ namespace KevinMaduProject2.Driver
 
             PopulateLetters();
             GenerateSevenRandomLetters();
-        }
-
-        public bool CheckDuplicatedWord(string wordToBeChecked)
-        {
-            if (UserWords.Contains(wordToBeChecked))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-        
+        }  
 
         public bool CheckWordIsValid(string userWord)
         {

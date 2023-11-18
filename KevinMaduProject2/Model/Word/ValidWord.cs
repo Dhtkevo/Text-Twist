@@ -10,7 +10,7 @@ namespace KevinMaduProject2.Model.Word
     {
         public int PointsEarned { get; }
 
-        public ValidWord(string text, DateTime time, int points ) : base(text, time)
+        public ValidWord(string text, int time, int points ) : base(text, time)
         {
             if (points < 0) throw new ArgumentException("Must enter valid range of points");
 
