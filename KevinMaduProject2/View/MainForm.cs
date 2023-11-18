@@ -2,6 +2,7 @@ using KevinMaduProject2.Driver;
 using KevinMaduProject2.Model;
 using KevinMaduProject2.Model.Word;
 using KevinMaduProject2.Utilities;
+using KevinMaduProject2.View;
 using System.Reflection.Emit;
 using System.Timers;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ namespace KevinMaduProject2
 {
     public partial class MainForm : Form
     {
+        private HighScoreBoard _highScoreBoard;
 
         private TextTwist _textTwist;
 
@@ -310,8 +312,11 @@ namespace KevinMaduProject2
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _textTwist.SaveRoundHistory();
             _textTwist.CreateNewRound();
+            scoreLbl.Visible = false;
+            Timer1.Enabled = true;
+            displayTxtbox.Text = "";
+            EnableRandomLetterButtons();
             PopulateLetterButtons();
             UpdateScore();
             HideAllFeedbackLabels();
@@ -327,6 +332,12 @@ namespace KevinMaduProject2
         private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void highScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _highScoreBoard = new HighScoreBoard(_textTwist.AllRounds);
+            _highScoreBoard.ShowDialog();
         }
     }
 }

@@ -221,5 +221,10 @@ namespace KevinMaduProject2.Model
             }
         }
 
+        public override string ToString()
+        {
+            return $"Score: {Score} - Time: {Clock.TimeInSeconds} seconds";
+        }
+
     }
 }

@@ -52,6 +52,7 @@
             twoMinutesMenuItem = new ToolStripMenuItem();
             threeMinutesMenuItem = new ToolStripMenuItem();
             twistLettersMenuItem = new ToolStripMenuItem();
+            highScoreToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -223,7 +224,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { gameToolStripMenuItem, timerToolStripMenuItem, twistLettersMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { gameToolStripMenuItem, timerToolStripMenuItem, twistLettersMenuItem, highScoreToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -242,7 +243,7 @@
             // 
             newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
             newGameToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.N;
-            newGameToolStripMenuItem.Size = new Size(180, 22);
+            newGameToolStripMenuItem.Size = new Size(171, 22);
             newGameToolStripMenuItem.Text = "New Game";
             newGameToolStripMenuItem.Click += newGameToolStripMenuItem_Click;
             // 
@@ -250,7 +251,7 @@
             // 
             exitGameToolStripMenuItem.Name = "exitGameToolStripMenuItem";
             exitGameToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.Q;
-            exitGameToolStripMenuItem.Size = new Size(180, 22);
+            exitGameToolStripMenuItem.Size = new Size(171, 22);
             exitGameToolStripMenuItem.Text = "Exit Game";
             exitGameToolStripMenuItem.Click += exitGameToolStripMenuItem_Click;
             // 
@@ -290,6 +291,14 @@
             twistLettersMenuItem.Size = new Size(83, 20);
             twistLettersMenuItem.Text = "Twist Letters";
             twistLettersMenuItem.Click += twistLettersMenuItem_Click;
+            // 
+            // highScoreToolStripMenuItem
+            // 
+            highScoreToolStripMenuItem.Name = "highScoreToolStripMenuItem";
+            highScoreToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.H;
+            highScoreToolStripMenuItem.Size = new Size(77, 20);
+            highScoreToolStripMenuItem.Text = "High Score";
+            highScoreToolStripMenuItem.Click += highScoreToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -347,5 +356,6 @@
         private ToolStripMenuItem gameToolStripMenuItem;
         private ToolStripMenuItem newGameToolStripMenuItem;
         private ToolStripMenuItem exitGameToolStripMenuItem;
+        private ToolStripMenuItem highScoreToolStripMenuItem;
     }
 }
