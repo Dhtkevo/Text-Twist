@@ -42,7 +42,7 @@ namespace KevinMaduProject2
 
         private void UpdateScore()
         {
-            scoreLbl.Text = $"Score: {_textTwist.Score}";
+            scoreLbl.Text = $"Score: {_textTwist.Round.Score}";
         }
 
         private void PopulateLetterButtons()
@@ -183,7 +183,7 @@ namespace KevinMaduProject2
             {
                 // Show valid label with word in it or invalid with word in it
 
-                var points = _textTwist.DetermineWordScore(userWord);
+                var points = _textTwist.Round.DetermineWordScore(userWord);
 
                 invalidWordLbl.Text = "";
                 invalidWordLbl.Visible = false;
