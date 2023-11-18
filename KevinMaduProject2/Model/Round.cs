@@ -19,6 +19,8 @@ namespace KevinMaduProject2.Model
             }
         }
 
+        public Clock Clock { get; set; }
+
         public List<ValidWord>ValidWords { get; }
 
         public List<InvalidWord> InvalidWords { get; }
@@ -28,6 +30,7 @@ namespace KevinMaduProject2.Model
             _score = 0;
             ValidWords = new List<ValidWord>();
             InvalidWords = new List<InvalidWord>();
+            Clock = new Clock();
         }
 
         public int DetermineWordScore(string wordToBeScored)
@@ -67,18 +70,17 @@ namespace KevinMaduProject2.Model
             _score += points;
         }
 
-        public void AddToValidWords(string word)
+        public void AddToValidWords(string word, int time)
         {
             var points = DetermineWordScore(word);
-            var time = DateTime.Now;
             var valid = new ValidWord(word, time, points);
             ValidWords.Add(valid);
         }
 
-        public void AddToInvalidWords(string word, string reason)
+        public void AddToInvalidWords(string word, int time, string reason)
         {
-            var time = DateTime.Now;
             var invalid = new InvalidWord(word, time, reason);
+            InvalidWords.Add(invalid);
         }
 
         public bool CheckDuplicatedWord(string wordToBeChecked)

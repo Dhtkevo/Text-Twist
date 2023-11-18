@@ -14,7 +14,6 @@ namespace KevinMaduProject2
 
         private TextTwist _textTwist;
 
-        private Clock _clock;
 
         private Timer Timer1;
 
@@ -34,7 +33,6 @@ namespace KevinMaduProject2
             // Disable submit button when application is first launched
             submitWordBtn.Enabled = false;
 
-            _clock = new Clock();
 
             Timer1 = new System.Windows.Forms.Timer();
 
@@ -173,9 +171,11 @@ namespace KevinMaduProject2
 
         private void HandleWordFeedback(string userWord)
         {
+            var time = _textTwist.Round.Clock.TimeInSeconds;
+
             if (_textTwist.Round.CheckDuplicatedWord(userWord))
             {
-                _textTwist.Round.AddToInvalidWords(userWord, InvalidWordReasons.WordAlreadyEntered);
+                _textTwist.Round.AddToInvalidWords(userWord, time, InvalidWordReasons.WordAlreadyEntered);
 
                 duplicateWordLbl.Text = $"You already entered the word '{userWord}'";
                 duplicateWordLbl.Visible = true;
@@ -198,14 +198,14 @@ namespace KevinMaduProject2
                 duplicateWordLbl.Visible = false;
 
                 // _textTwist.UserWords.Add(userWord);
-                _textTwist.Round.AddToValidWords(userWord);
+                _textTwist.Round.AddToValidWords(userWord, time );
 
                 UpdateScore();
             }
             else
             {
                 // Come back and update this method. Need to get clock time
-                _textTwist.Round.AddToInvalidWords(userWord, InvalidWordReasons.NotInDictionary);
+                _textTwist.Round.AddToInvalidWords(userWord, time, InvalidWordReasons.NotInDictionary);
 
                 validWordLbl.Text = "";
                 validWordLbl.Visible = false;
@@ -257,7 +257,7 @@ namespace KevinMaduProject2
         }
         private void Timer1_Tick(object Sender, EventArgs e)
         {
-            if (_clock.CheckOutOfTime())
+            if (_textTwist.Round.Clock.CheckOutOfTime())
             {
                 Timer1.Enabled = false;
                 DisableRandomLetterButtons();
@@ -265,8 +265,8 @@ namespace KevinMaduProject2
                 return;
             }
 
-            _clock.DecrementClock();
-            timerLbl.Text = $"Time Remaining: {_clock.TimeInSeconds.ToString()} seconds";
+            _textTwist.Round.Clock.DecrementClock();
+            timerLbl.Text = $"Time Remaining: {_textTwist.Round.Clock.TimeInSeconds.ToString()} seconds";
         }
 
     }
