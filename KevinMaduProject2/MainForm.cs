@@ -219,11 +219,20 @@ namespace KevinMaduProject2
 
         private void PopulateDisplayUserWords()
         {
+            var position = 1;
+
             displayTxtbox.Text = "";
             foreach (ValidWord word in _textTwist.Round.ValidWords)
             {
-                displayTxtbox.Text += $"{word.Text}{Environment.NewLine}";
+                displayTxtbox.Text += $"{position}.{word.Text} - {word.GameTime}seconds - {word.PointsEarned}Points{Environment.NewLine}";
+                position++;
             }
+
+            //foreach (InvalidWord word in _textTwist.Round.InvalidWords)
+            //{
+            //    displayTxtbox.Text += $"{position}.{word.Text} - {word.GameTime}seconds - {word.Reason}{Environment.NewLine}";
+            //    position++;
+            //}
         }
 
         private void EnableRandomLetterButtons()
