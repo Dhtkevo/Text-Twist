@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KevinMaduProject2.Model
 {
-    public class Round
+    public class Round : IComparable<Round>
     {
         public List<char> Letters { get; }
 
@@ -223,8 +223,24 @@ namespace KevinMaduProject2.Model
 
         public override string ToString()
         {
-            return $"Score: {Score} - Time: {Clock.TimeInSeconds} seconds";
+            return $"Score: {Score} - Time Remaining: {Clock.TimeInSeconds} seconds";
         }
 
+        public int CompareTo(Round otherRound)
+        {
+            if (Score > otherRound.Score)
+            {
+                return -1;
+
+            } else if (Score < otherRound.Score)
+            {
+                return 1;
+
+            } else
+            {
+                return 0;
+
+            }
+        }
     }
 }

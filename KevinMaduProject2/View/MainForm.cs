@@ -226,7 +226,7 @@ namespace KevinMaduProject2
             displayTxtbox.Text = "";
             foreach (ValidWord word in _textTwist.Round.ValidWords)
             {
-                displayTxtbox.Text += $"{position}.{word.Text} - {word.GameTime}seconds - {word.PointsEarned}Points{Environment.NewLine}";
+                displayTxtbox.Text += $"{position}.{word.Text} - Entered at {word.GameTime} seconds - {word.PointsEarned} Points{Environment.NewLine}";
                 position++;
             }
 
@@ -316,6 +316,7 @@ namespace KevinMaduProject2
             scoreLbl.Visible = false;
             Timer1.Enabled = true;
             displayTxtbox.Text = "";
+            userWordTxtbox.Text = "";
             EnableRandomLetterButtons();
             PopulateLetterButtons();
             UpdateScore();

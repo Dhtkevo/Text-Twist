@@ -20,15 +20,25 @@ namespace KevinMaduProject2.View
 
             _rounds = list;
 
+            PopulateBoard();
+        }
+
+        private void PopulateBoard()
+        {
             var roundCounter = 1;
 
-            foreach( Round round in _rounds )
+            foreach (Round round in _rounds)
             {
-                highScoreTxtbox.Text += $"Round: {roundCounter} - {round.ToString()}{Environment.NewLine}";
+                highScoreTxtbox.Text += $"{roundCounter}. Anonymous Attempt - {round.ToString()}{Environment.NewLine}";
                 roundCounter++;
             }
         }
 
-
+        private void sortByOverallScoreBtn_Click(object sender, EventArgs e)
+        {
+            _rounds.Sort();
+            highScoreTxtbox.Text = "";
+            PopulateBoard();
+        }
     }
 }

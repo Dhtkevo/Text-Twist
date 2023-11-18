@@ -51,6 +51,7 @@
             sortByOverallScoreBtn.TabIndex = 1;
             sortByOverallScoreBtn.Text = "Sort By Overall Score";
             sortByOverallScoreBtn.UseVisualStyleBackColor = true;
+            sortByOverallScoreBtn.Click += sortByOverallScoreBtn_Click;
             // 
             // sortTimeandScoreBtn
             // 
