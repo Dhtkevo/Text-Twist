@@ -48,6 +48,7 @@
             oneMinuteMenuItem = new ToolStripMenuItem();
             twoMinutesMenuItem = new ToolStripMenuItem();
             threeMinutesMenuItem = new ToolStripMenuItem();
+            twistLettersMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -219,7 +220,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { timerToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { timerToolStripMenuItem, twistLettersMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -230,8 +231,9 @@
             // 
             timerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { oneMinuteMenuItem, twoMinutesMenuItem, threeMinutesMenuItem });
             timerToolStripMenuItem.Name = "timerToolStripMenuItem";
+            timerToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.T;
             timerToolStripMenuItem.Size = new Size(49, 20);
-            timerToolStripMenuItem.Text = "Timer";
+            timerToolStripMenuItem.Text = "&Timer";
             // 
             // oneMinuteMenuItem
             // 
@@ -253,6 +255,14 @@
             threeMinutesMenuItem.Size = new Size(180, 22);
             threeMinutesMenuItem.Text = "3 Minutes";
             threeMinutesMenuItem.Click += threeMinutesMenuItem_Click;
+            // 
+            // twistLettersMenuItem
+            // 
+            twistLettersMenuItem.Name = "twistLettersMenuItem";
+            twistLettersMenuItem.ShortcutKeys = Keys.Alt | Keys.W;
+            twistLettersMenuItem.Size = new Size(83, 20);
+            twistLettersMenuItem.Text = "Twist Letters";
+            twistLettersMenuItem.Click += twistLettersMenuItem_Click;
             // 
             // MainForm
             // 
@@ -306,5 +316,6 @@
         private ToolStripMenuItem oneMinuteMenuItem;
         private ToolStripMenuItem twoMinutesMenuItem;
         private ToolStripMenuItem threeMinutesMenuItem;
+        private ToolStripMenuItem twistLettersMenuItem;
     }
 }

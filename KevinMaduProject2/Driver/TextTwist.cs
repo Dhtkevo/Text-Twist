@@ -15,8 +15,6 @@ namespace KevinMaduProject2.Driver
 
         public List<char> RandomLetters { get; }
 
-        public List<string> UserWords { get; }
-
         public List<Round> AllRounds { get; }
 
         public Round Round { get; }
@@ -29,14 +27,40 @@ namespace KevinMaduProject2.Driver
             Letters = new List<char>();
             RandomLetters = new List<char>();
             _dictionaries = new DataImporter().ReadFile();
-            UserWords = new List<string>();
             AllRounds = new List<Round>();
             Round = new Round();
 
             PopulateLetters();
             GenerateSevenRandomLetters();
-        }  
+        }
 
+        public void Twist()
+        {
+            
+            List<char> odds = new List<char>();
+            List<char> evens = new List<char>();
+
+            for (var i = 0; i < RandomLetters.Count; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    odds.Add(RandomLetters[i]);
+                } else
+                {
+                    evens.Add(RandomLetters[i]);
+                }
+            }
+
+            RandomLetters.Clear();
+
+            RandomLetters.Add(evens[3]);
+
+            for (var i = 0; i < 3; i++)
+                {
+                    RandomLetters.Add(evens[i]);
+                    RandomLetters.Add(odds[i]);
+                }
+        }
         public bool CheckWordIsValid(string userWord)
         {
             foreach (Dictionary dict in _dictionaries)

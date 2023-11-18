@@ -298,5 +298,11 @@ namespace KevinMaduProject2
         {
             _textTwist.Round.Clock = new Clock(180);
         }
+
+        private void twistLettersMenuItem_Click(object sender, EventArgs e)
+        {
+            _textTwist.Twist();
+            PopulateLetterButtons();
+        }
     }
 }
