@@ -223,7 +223,7 @@ namespace KevinMaduProject2.Model
 
         public override string ToString()
         {
-            return $"Score: {Score} - Time Remaining: {Clock.TimeInSeconds} seconds";
+            return $"Score: {Score} - Time Limit: {Clock.TimeLimit} seconds";
         }
 
         public int CompareTo(Round otherRound)

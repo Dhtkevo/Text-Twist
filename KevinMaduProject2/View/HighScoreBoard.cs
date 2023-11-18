@@ -1,4 +1,5 @@
 ﻿using KevinMaduProject2.Model;
+using KevinMaduProject2.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,13 @@ namespace KevinMaduProject2.View
         private void sortByOverallScoreBtn_Click(object sender, EventArgs e)
         {
             _rounds.Sort();
+            highScoreTxtbox.Text = "";
+            PopulateBoard();
+        }
+
+        private void sortTimeandScoreBtn_Click(object sender, EventArgs e)
+        {
+            _rounds.Sort(new ScoreTimeDescendingOrder());
             highScoreTxtbox.Text = "";
             PopulateBoard();
         }

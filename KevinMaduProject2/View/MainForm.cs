@@ -312,6 +312,7 @@ namespace KevinMaduProject2
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           if (_textTwist.Round.Score > 0)  _textTwist.SaveRoundHistory(); // remove this depending on what Professor says
             _textTwist.CreateNewRound();
             scoreLbl.Visible = false;
             Timer1.Enabled = true;

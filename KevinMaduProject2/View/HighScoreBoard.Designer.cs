@@ -61,6 +61,7 @@
             sortTimeandScoreBtn.TabIndex = 2;
             sortTimeandScoreBtn.Text = "Sort By Time and Score";
             sortTimeandScoreBtn.UseVisualStyleBackColor = true;
+            sortTimeandScoreBtn.Click += sortTimeandScoreBtn_Click;
             // 
             // resetHighScoreBoardBtn
             // 

@@ -14,6 +14,8 @@ namespace KevinMaduProject2.Model
             get { return _time; }
         }
 
+        public int TimeLimit { get; set; }
+
         public Clock() : this(60)
         {
         }
@@ -26,6 +28,7 @@ namespace KevinMaduProject2.Model
             }
 
             _time = seconds;
+            TimeLimit = seconds;
         }
 
         public void DecrementClock()
