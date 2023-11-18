@@ -17,6 +17,8 @@ namespace KevinMaduProject2.Driver
 
         public List<string> UserWords { get; }
 
+        public List<Round> AllRounds { get; }
+
         public Round Round { get; }
 
         private List<Dictionary> _dictionaries;
@@ -28,6 +30,7 @@ namespace KevinMaduProject2.Driver
             RandomLetters = new List<char>();
             _dictionaries = new DataImporter().ReadFile();
             UserWords = new List<string>();
+            AllRounds = new List<Round>();
             Round = new Round();
 
             PopulateLetters();

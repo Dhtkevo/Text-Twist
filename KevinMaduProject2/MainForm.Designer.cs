@@ -187,6 +187,7 @@
             scoreLbl.Size = new Size(95, 30);
             scoreLbl.TabIndex = 12;
             scoreLbl.Text = "Score: 0";
+            scoreLbl.Visible = false;
             // 
             // duplicateWordLbl
             // 

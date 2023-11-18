@@ -160,9 +160,6 @@ namespace KevinMaduProject2
 
             HandleWordFeedback(userWord);
 
-
-            PopulateDisplayUserWords();
-
             userWordTxtbox.Text = "";
             submitWordBtn.Enabled = false;
 
@@ -198,7 +195,7 @@ namespace KevinMaduProject2
                 duplicateWordLbl.Visible = false;
 
                 // _textTwist.UserWords.Add(userWord);
-                _textTwist.Round.AddToValidWords(userWord, time );
+                _textTwist.Round.AddToValidWords(userWord, time);
 
                 UpdateScore();
             }
@@ -270,6 +267,8 @@ namespace KevinMaduProject2
             {
                 Timer1.Enabled = false;
                 DisableRandomLetterButtons();
+                PopulateDisplayUserWords();
+                scoreLbl.Visible = true;
                 MessageBox.Show("Round Over!");
                 return;
             }
