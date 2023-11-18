@@ -43,6 +43,12 @@
             scoreLbl = new Label();
             duplicateWordLbl = new Label();
             timerLbl = new Label();
+            menuStrip1 = new MenuStrip();
+            timerToolStripMenuItem = new ToolStripMenuItem();
+            oneMinuteMenuItem = new ToolStripMenuItem();
+            twoMinutesMenuItem = new ToolStripMenuItem();
+            threeMinutesMenuItem = new ToolStripMenuItem();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // displayTxtbox
@@ -211,6 +217,43 @@
             timerLbl.TabIndex = 14;
             timerLbl.Text = "Time Remaining:";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { timerToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 15;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // timerToolStripMenuItem
+            // 
+            timerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { oneMinuteMenuItem, twoMinutesMenuItem, threeMinutesMenuItem });
+            timerToolStripMenuItem.Name = "timerToolStripMenuItem";
+            timerToolStripMenuItem.Size = new Size(49, 20);
+            timerToolStripMenuItem.Text = "Timer";
+            // 
+            // oneMinuteMenuItem
+            // 
+            oneMinuteMenuItem.Name = "oneMinuteMenuItem";
+            oneMinuteMenuItem.Size = new Size(180, 22);
+            oneMinuteMenuItem.Text = "1 Minute";
+            oneMinuteMenuItem.Click += oneMinuteMenuItem_Click;
+            // 
+            // twoMinutesMenuItem
+            // 
+            twoMinutesMenuItem.Name = "twoMinutesMenuItem";
+            twoMinutesMenuItem.Size = new Size(180, 22);
+            twoMinutesMenuItem.Text = "2 Minutes";
+            twoMinutesMenuItem.Click += twoMinutesMenuItem_Click;
+            // 
+            // threeMinutesMenuItem
+            // 
+            threeMinutesMenuItem.Name = "threeMinutesMenuItem";
+            threeMinutesMenuItem.Size = new Size(180, 22);
+            threeMinutesMenuItem.Text = "3 Minutes";
+            threeMinutesMenuItem.Click += threeMinutesMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -231,8 +274,12 @@
             Controls.Add(letterBtn1);
             Controls.Add(userWordTxtbox);
             Controls.Add(displayTxtbox);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "MainForm";
             Text = "Text Twist By Madu";
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -254,5 +301,10 @@
         private Label scoreLbl;
         private Label duplicateWordLbl;
         private Label timerLbl;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem timerToolStripMenuItem;
+        private ToolStripMenuItem oneMinuteMenuItem;
+        private ToolStripMenuItem twoMinutesMenuItem;
+        private ToolStripMenuItem threeMinutesMenuItem;
     }
 }

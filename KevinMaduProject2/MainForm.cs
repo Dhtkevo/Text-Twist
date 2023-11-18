@@ -283,5 +283,20 @@ namespace KevinMaduProject2
             MessageBox.Show("Round Over!");
         }
 
+        private void oneMinuteMenuItem_Click(object sender, EventArgs e)
+        {
+            _textTwist.Round.Clock = new Clock(60);
+        }
+
+        private void twoMinutesMenuItem_Click(object sender, EventArgs e)
+        {
+            _textTwist.Round.Clock = new Clock(120);
+
+        }
+
+        private void threeMinutesMenuItem_Click(object sender, EventArgs e)
+        {
+            _textTwist.Round.Clock = new Clock(180);
+        }
     }
 }
