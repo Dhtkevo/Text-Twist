@@ -265,16 +265,22 @@ namespace KevinMaduProject2
         {
             if (_textTwist.Round.Clock.CheckOutOfTime())
             {
-                Timer1.Enabled = false;
-                DisableRandomLetterButtons();
-                PopulateDisplayUserWords();
-                scoreLbl.Visible = true;
-                MessageBox.Show("Round Over!");
+                HandleClockAtZero();
                 return;
             }
 
             _textTwist.Round.Clock.DecrementClock();
             timerLbl.Text = $"Time Remaining: {_textTwist.Round.Clock.TimeInSeconds.ToString()} seconds";
+        }
+
+        private void HandleClockAtZero()
+        {
+            Timer1.Enabled = false;
+            DisableRandomLetterButtons();
+            PopulateDisplayUserWords();
+            scoreLbl.Visible = true;
+            _textTwist.SaveRoundHistory();
+            MessageBox.Show("Round Over!");
         }
 
     }

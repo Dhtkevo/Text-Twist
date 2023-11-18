@@ -69,6 +69,11 @@ namespace KevinMaduProject2.Driver
             }
         }
 
+        public void SaveRoundHistory()
+        {
+            AllRounds.Add(Round);
+        }
+
         private void PopulateLetters()
         {
             // add 11 e's to letters
