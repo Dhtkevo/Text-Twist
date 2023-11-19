@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 using KevinMaduProject2.Model;
-using Microsoft.VisualBasic.Devices;
-using static System.Windows.Forms.Design.AxImporter;
 
 namespace KevinMaduProject2.Utilities
 {
+    /// <summary>
+    /// Class for importing data
+    /// </summary>
     public class DataImporter
     {
 
         private readonly string _filePath;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataImporter"/> class.
+        /// </summary>
         public DataImporter()
         {
             _filePath = "C:\\Users\\km00372\\Desktop\\KevinMaduProject2\\KevinMaduProject2\\Data\\dictionary.json";
@@ -62,6 +62,10 @@ namespace KevinMaduProject2.Utilities
         //    return null;
         //}
 
+        /// <summary>
+        /// Reads the file.
+        /// </summary>
+        /// <returns></returns>
         public List<Dictionary> ReadFile()
         {
             var json = File.ReadAllText(_filePath);

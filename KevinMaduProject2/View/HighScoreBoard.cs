@@ -1,27 +1,25 @@
 ﻿using KevinMaduProject2.Model;
 using KevinMaduProject2.Utilities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Reflection.Metadata.BlobBuilder;
-using static System.Windows.Forms.Design.AxImporter;
 
 namespace KevinMaduProject2.View
 {
+    /// <summary>
+    /// Round board class
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class HighScoreBoard : Form
     {
         private List<Round> _rounds;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HighScoreBoard"/> class.
+        /// </summary>
+        /// <param name="list">The list.</param>
+        /// <exception cref="System.ArgumentException">Null Round</exception>
         public HighScoreBoard(List<Round> list)
         {
+            if (list == null) throw new ArgumentException("Null Round");
+
             InitializeComponent();
 
             _rounds = list;

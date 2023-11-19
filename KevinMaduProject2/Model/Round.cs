@@ -1,32 +1,68 @@
 ﻿using KevinMaduProject2.Model.Word;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace KevinMaduProject2.Model
 {
+    /// <summary>
+    /// Represents a round
+    /// </summary>
+    /// <seealso cref="System.IComparable&lt;KevinMaduProject2.Model.Round&gt;" />
     public class Round : IComparable<Round>
     {
+        /// <summary>
+        /// Gets the letters.
+        /// </summary>
+        /// <value>
+        /// The letters.
+        /// </value>
         public List<char> Letters { get; }
 
+        /// <summary>
+        /// Gets the random letters.
+        /// </summary>
+        /// <value>
+        /// The random letters.
+        /// </value>
         public List<char> RandomLetters { get; }
 
         private int _score;
 
+        /// <summary>
+        /// Gets the score.
+        /// </summary>
+        /// <value>
+        /// The score.
+        /// </value>
         public int Score {
             get { return _score; } 
         }
-            
-       
+
+        /// <summary>
+        /// Gets or sets the clock.
+        /// </summary>
+        /// <value>
+        /// The clock.
+        /// </value>
         public Clock Clock { get; set; }
 
+        /// <summary>
+        /// Gets the valid words.
+        /// </summary>
+        /// <value>
+        /// The valid words.
+        /// </value>
         public List<ValidWord>ValidWords { get; }
 
+        /// <summary>
+        /// Gets the invalid words.
+        /// </summary>
+        /// <value>
+        /// The invalid words.
+        /// </value>
         public List<InvalidWord> InvalidWords { get; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Round"/> class.
+        /// </summary>
         public Round()
         {
             _score = 0;
@@ -41,6 +77,9 @@ namespace KevinMaduProject2.Model
             GenerateSevenRandomLetters();
         }
 
+        /// <summary>
+        /// Generates the seven random letters.
+        /// </summary>
         public void GenerateSevenRandomLetters()
         {
             Random rnd = new Random();
@@ -53,6 +92,10 @@ namespace KevinMaduProject2.Model
 
             }
         }
+
+        /// <summary>
+        /// Twists the letters.
+        /// </summary>
         public void Twist()
         {
 
@@ -82,11 +125,18 @@ namespace KevinMaduProject2.Model
             }
         }
 
+        /// <summary>
+        /// Determines the word score.
+        /// </summary>
+        /// <param name="wordToBeScored">The word to be scored.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentException"></exception>
         public int DetermineWordScore(string wordToBeScored)
         {
+            if (string.IsNullOrWhiteSpace(wordToBeScored)) throw new ArgumentException();
 
             var pointsToAdd = 0;
-            // Determine amount of points word is worth
+
             if (wordToBeScored.Length == 3)
             {
                 pointsToAdd = 90;
@@ -114,26 +164,67 @@ namespace KevinMaduProject2.Model
             return pointsToAdd;
         }
 
+        /// <summary>
+        /// Adds to score.
+        /// </summary>
+        /// <param name="points">The points.</param>
+        /// <exception cref="System.ArgumentException"></exception>
         public void AddToScore(int points)
         {
+            if (points < 90) throw new ArgumentException("Must be atleast 90");
+
             _score += points;
         }
 
+        /// <summary>
+        /// Adds to valid words.
+        /// </summary>
+        /// <param name="word">The word.</param>
+        /// <param name="time">The time.</param>
+        /// <exception cref="System.ArgumentException"></exception>
         public void AddToValidWords(string word, int time)
         {
+            if (string.IsNullOrWhiteSpace(word)) throw new ArgumentException("Word blank");
+            if (time < 0) throw new ArgumentException("Time bad");
+
             var points = DetermineWordScore(word);
             var valid = new ValidWord(word, time, points);
             ValidWords.Add(valid);
         }
 
+        /// <summary>
+        /// Adds to invalid words.
+        /// </summary>
+        /// <param name="word">The word.</param>
+        /// <param name="time">The time.</param>
+        /// <param name="reason">The reason.</param>
+        /// <exception cref="System.ArgumentException">
+        /// Invalid reason
+        /// or
+        /// Invalid word
+        /// or
+        /// invalid time
+        /// </exception>
         public void AddToInvalidWords(string word, int time, string reason)
         {
+            if (string.IsNullOrEmpty(reason)) throw new ArgumentException("Invalid reason");
+            if (string.IsNullOrEmpty(word)) throw new ArgumentException("Invalid word");
+            if (time < 0) throw new ArgumentException("invalid time");
+
             var invalid = new InvalidWord(word, time, reason);
             InvalidWords.Add(invalid);
         }
 
+        /// <summary>
+        /// Checks the duplicated word.
+        /// </summary>
+        /// <param name="wordToBeChecked">The word to be checked.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentException">Invalid word</exception>
         public bool CheckDuplicatedWord(string wordToBeChecked)
         {
+            if (string.IsNullOrWhiteSpace(wordToBeChecked)) throw new ArgumentException("Invalid word");
+
             foreach (ValidWord word in ValidWords)
             {
                 if (word.Text == wordToBeChecked)
@@ -147,25 +238,21 @@ namespace KevinMaduProject2.Model
 
         private void PopulateLetters()
         {
-            // add 11 e's to letters
             for (var i = 0; i < 11; i++)
             {
                 Letters.Add('e');
             }
 
-            // add 9 t's
             for (var i = 0; i < 9; i++)
             {
                 Letters.Add('t');
             }
 
-            // add 8 o's
             for (var i = 0; i < 8; i++)
             {
                 Letters.Add('o');
             }
 
-            // add 6 a,i,n,s
             for (var i = 0; i < 6; i++)
             {
                 Letters.Add('a');
@@ -174,20 +261,17 @@ namespace KevinMaduProject2.Model
                 Letters.Add('s');
             }
 
-            // add 5 h,r
             for (var i = 0; i < 5; i++)
             {
                 Letters.Add('h');
                 Letters.Add('r');
             }
 
-            // add 4 l's
             for (var i = 0; i < 4; i++)
             {
                 Letters.Add('l');
             }
 
-            // add 3 d,u,w,y
             for (var i = 0; i < 3; i++)
             {
                 Letters.Add('d');
@@ -196,7 +280,6 @@ namespace KevinMaduProject2.Model
                 Letters.Add('y');
             }
 
-            // add 2 b,c,f,g,m,p,v
             for (var i = 0; i < 2; i++)
             {
                 Letters.Add('b');
@@ -208,7 +291,6 @@ namespace KevinMaduProject2.Model
                 Letters.Add('v');
             }
 
-            // add 1 j,k,q,x,z
             for (var i = 0; i < 1; i++)
             {
                 Letters.Add('j');
@@ -219,13 +301,27 @@ namespace KevinMaduProject2.Model
             }
         }
 
+        /// <summary>
+        /// Converts to string.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String" /> that represents this instance.
+        /// </returns>
         public override string ToString()
         {
             return $"Score: {Score} - Time Limit: {Clock.TimeLimit} seconds";
         }
 
+        /// <summary>
+        /// Compares to.
+        /// </summary>
+        /// <param name="otherRound">The other round.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentException">Round can't be null</exception>
         public int CompareTo(Round otherRound)
         {
+            if (otherRound == null) throw new ArgumentException("Round can't be null");
+
             if (Score > otherRound.Score)
             {
                 return -1;

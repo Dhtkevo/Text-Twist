@@ -3,38 +3,36 @@ using KevinMaduProject2.Model;
 using KevinMaduProject2.Model.Word;
 using KevinMaduProject2.Utilities;
 using KevinMaduProject2.View;
-using System.Reflection.Emit;
-using System.Timers;
-using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
 namespace KevinMaduProject2
 {
+    /// <summary>
+    /// Main Form class
+    /// </summary>
+    /// <seealso cref="System.Windows.Forms.Form" />
     public partial class MainForm : Form
     {
         private HighScoreBoard _highScoreBoard;
 
         private TextTwist _textTwist;
 
-
         private Timer Timer1;
 
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainForm"/> class.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
 
             _textTwist = new TextTwist();
 
-            // Set score label
             UpdateScore();
 
-            // Make text of each button corresponding random letter
             PopulateLetterButtons();
 
-            // Disable submit button when application is first launched
             submitWordBtn.Enabled = false;
-
 
             Timer1 = new System.Windows.Forms.Timer();
 
@@ -187,7 +185,6 @@ namespace KevinMaduProject2
 
             if (_textTwist.CheckWordIsValid(userWord))
             {
-                // Show valid label with word in it or invalid with word in it
 
                 var points = _textTwist.Round.DetermineWordScore(userWord);
                 _textTwist.Round.AddToScore(points);
@@ -200,14 +197,12 @@ namespace KevinMaduProject2
 
                 duplicateWordLbl.Visible = false;
 
-                // _textTwist.UserWords.Add(userWord);
                 _textTwist.Round.AddToValidWords(userWord, time);
 
                 UpdateScore();
             }
             else
             {
-                // Come back and update this method. Need to get clock time
                 _textTwist.Round.AddToInvalidWords(userWord, time, InvalidWordReasons.NotInDictionary);
 
                 validWordLbl.Text = "";
@@ -230,12 +225,6 @@ namespace KevinMaduProject2
                 displayTxtbox.Text += $"{position}.{word.Text} - Entered at {word.GameTime} seconds - {word.PointsEarned} Points{Environment.NewLine}";
                 position++;
             }
-
-            //foreach (InvalidWord word in _textTwist.Round.InvalidWords)
-            //{
-            //    displayTxtbox.Text += $"{position}.{word.Text} - {word.GameTime}seconds - {word.Reason}{Environment.NewLine}";
-            //    position++;
-            //}
         }
 
         private void EnableRandomLetterButtons()
@@ -313,7 +302,7 @@ namespace KevinMaduProject2
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           if (_textTwist.Round.Score > 0)  _textTwist.SaveRoundHistory(); // remove this depending on what Professor says
+            if (_textTwist.Round.Score > 0) _textTwist.SaveRoundHistory();
             _textTwist.CreateNewRound();
             scoreLbl.Visible = false;
             Timer1.Enabled = true;

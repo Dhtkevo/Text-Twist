@@ -65,7 +65,7 @@
             displayTxtbox.ReadOnly = true;
             displayTxtbox.ScrollBars = ScrollBars.Vertical;
             displayTxtbox.Size = new Size(536, 169);
-            displayTxtbox.TabIndex = 0;
+            displayTxtbox.TabIndex = 1;
             // 
             // userWordTxtbox
             // 
@@ -83,7 +83,7 @@
             letterBtn1.Location = new Point(171, 314);
             letterBtn1.Name = "letterBtn1";
             letterBtn1.Size = new Size(47, 37);
-            letterBtn1.TabIndex = 2;
+            letterBtn1.TabIndex = 3;
             letterBtn1.Text = "1";
             letterBtn1.UseVisualStyleBackColor = true;
             letterBtn1.Click += letterBtn1_Click;
@@ -94,7 +94,7 @@
             letterBtn2.Location = new Point(242, 314);
             letterBtn2.Name = "letterBtn2";
             letterBtn2.Size = new Size(47, 37);
-            letterBtn2.TabIndex = 3;
+            letterBtn2.TabIndex = 4;
             letterBtn2.Text = "2";
             letterBtn2.UseVisualStyleBackColor = true;
             letterBtn2.Click += letterBtn2_Click;
@@ -105,7 +105,7 @@
             letterBtn3.Location = new Point(311, 314);
             letterBtn3.Name = "letterBtn3";
             letterBtn3.Size = new Size(47, 37);
-            letterBtn3.TabIndex = 4;
+            letterBtn3.TabIndex = 5;
             letterBtn3.Text = "3";
             letterBtn3.UseVisualStyleBackColor = true;
             letterBtn3.Click += letterBtn3_Click;
@@ -116,7 +116,7 @@
             letterBtn4.Location = new Point(376, 314);
             letterBtn4.Name = "letterBtn4";
             letterBtn4.Size = new Size(47, 37);
-            letterBtn4.TabIndex = 5;
+            letterBtn4.TabIndex = 6;
             letterBtn4.Text = "4";
             letterBtn4.UseVisualStyleBackColor = true;
             letterBtn4.Click += letterBtn4_Click;
@@ -127,7 +127,7 @@
             letterBtn5.Location = new Point(443, 314);
             letterBtn5.Name = "letterBtn5";
             letterBtn5.Size = new Size(47, 37);
-            letterBtn5.TabIndex = 6;
+            letterBtn5.TabIndex = 7;
             letterBtn5.Text = "5";
             letterBtn5.UseVisualStyleBackColor = true;
             letterBtn5.Click += letterBtn5_Click;
@@ -138,7 +138,7 @@
             letterBtn6.Location = new Point(508, 314);
             letterBtn6.Name = "letterBtn6";
             letterBtn6.Size = new Size(47, 37);
-            letterBtn6.TabIndex = 7;
+            letterBtn6.TabIndex = 8;
             letterBtn6.Text = "6";
             letterBtn6.UseVisualStyleBackColor = true;
             letterBtn6.Click += letterBtn6_Click;
@@ -149,7 +149,7 @@
             letterBtn7.Location = new Point(573, 314);
             letterBtn7.Name = "letterBtn7";
             letterBtn7.Size = new Size(47, 37);
-            letterBtn7.TabIndex = 8;
+            letterBtn7.TabIndex = 9;
             letterBtn7.Text = "7";
             letterBtn7.UseVisualStyleBackColor = true;
             letterBtn7.Click += letterBtn7_Click;
@@ -160,7 +160,7 @@
             submitWordBtn.Location = new Point(545, 258);
             submitWordBtn.Name = "submitWordBtn";
             submitWordBtn.Size = new Size(75, 40);
-            submitWordBtn.TabIndex = 9;
+            submitWordBtn.TabIndex = 2;
             submitWordBtn.Text = "Submit";
             submitWordBtn.UseVisualStyleBackColor = true;
             submitWordBtn.Click += submitWordBtn_Click;
@@ -228,7 +228,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 15;
+            menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
             // gameToolStripMenuItem

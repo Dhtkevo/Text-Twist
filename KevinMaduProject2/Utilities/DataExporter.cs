@@ -1,15 +1,20 @@
 ﻿using KevinMaduProject2.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace KevinMaduProject2.Utilities
 {
+    /// <summary>
+    /// Class responsible for exporting files
+    /// </summary>
     public class DataExporter
     {
         private List<Round> _rounds;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataExporter"/> class.
+        /// </summary>
+        /// <param name="rounds">The rounds.</param>
+        /// <exception cref="System.ArgumentException">Invalid list of rounds</exception>
         public DataExporter(List<Round> rounds) {
             if (rounds == null)
             {
@@ -19,6 +24,9 @@ namespace KevinMaduProject2.Utilities
             _rounds = rounds;        
         }
 
+        /// <summary>
+        /// Exports the stats as a CSV.
+        /// </summary>
         public void ExportCsv()
         {
             Stream myStream;
