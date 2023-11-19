@@ -27,8 +27,20 @@ namespace KevinMaduProject2.View
             _rounds = list;
 
             PopulateBoard();
+
+            DisableExportButton();
         }
 
+        private void DisableExportButton()
+        {
+            if (_rounds.Count > 0)
+            {
+                exportStatsBtn.Enabled = true;
+            } else
+            {
+                exportStatsBtn.Enabled = false;
+            }
+        }
 
 
 
@@ -62,41 +74,12 @@ namespace KevinMaduProject2.View
             _rounds.Clear();
             highScoreTxtbox.Text = "";
             PopulateBoard();
+            DisableExportButton();
         }
 
         private void exportStatsBtn_Click(object sender, EventArgs e)
         {
-            public void ExportCsv()
-            {
-                Stream myStream;
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
-                saveFileDialog1.Filter = "csv files (*.csv)|*.csv";
-                saveFileDialog1.FilterIndex = 2;
-                saveFileDialog1.RestoreDirectory = true;
-                saveFileDialog1.Title = "Export as CSV";
-
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    if ((myStream = saveFileDialog1.OpenFile()) != null)
-                    {
-                        using (StreamWriter writer = new StreamWriter(myStream, Encoding.UTF8))
-                        {
-                            writer.WriteLine("Text,Time Entered, Points");
-                            foreach (var round in _rounds)
-                            {
-                                foreach (var word in round.ValidWords)
-                                {
-                                    writer.WriteLine("Anonymous Attempt - " + word.ToString());
-                                }
-                                
-                            }
-                        }
-
-                        myStream.Close();
-                    }
-                }
-            }
+            new DataExporter(_rounds).ExportCsv();
         }
     }
 }

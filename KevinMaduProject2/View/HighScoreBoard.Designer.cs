@@ -77,6 +77,7 @@
             // 
             // exportStatsBtn
             // 
+            exportStatsBtn.Enabled = false;
             exportStatsBtn.Location = new Point(287, 370);
             exportStatsBtn.Name = "exportStatsBtn";
             exportStatsBtn.Size = new Size(142, 23);
