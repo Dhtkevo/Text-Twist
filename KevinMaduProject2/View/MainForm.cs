@@ -41,6 +41,7 @@ namespace KevinMaduProject2
             SetUpTimer();
         }
 
+
         private void UpdateScore()
         {
             scoreLbl.Text = $"Score: {_textTwist.Round.Score}";

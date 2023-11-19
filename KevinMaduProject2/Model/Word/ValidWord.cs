@@ -16,5 +16,10 @@ namespace KevinMaduProject2.Model.Word
 
             PointsEarned = points;
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + $" Points: {PointsEarned}";
+        }
     }
 }

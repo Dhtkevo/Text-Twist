@@ -16,5 +16,10 @@ namespace KevinMaduProject2.Model.Word
 
             Reason = reason;
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + $" Reason: {Reason}";
+        }
     }
 }

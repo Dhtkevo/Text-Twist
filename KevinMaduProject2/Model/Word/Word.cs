@@ -22,5 +22,10 @@ namespace KevinMaduProject2.Model.Word
             GameTime = time;
         }
 
+        public new virtual string ToString()
+        {
+            return $"Text: {Text} Time: {GameTime}";
+        }
+
     }
 }

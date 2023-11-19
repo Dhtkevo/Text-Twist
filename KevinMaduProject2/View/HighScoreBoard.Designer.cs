@@ -32,6 +32,7 @@
             sortByOverallScoreBtn = new Button();
             sortTimeandScoreBtn = new Button();
             resetHighScoreBoardBtn = new Button();
+            exportStatsBtn = new Button();
             SuspendLayout();
             // 
             // highScoreTxtbox
@@ -40,6 +41,7 @@
             highScoreTxtbox.Multiline = true;
             highScoreTxtbox.Name = "highScoreTxtbox";
             highScoreTxtbox.ReadOnly = true;
+            highScoreTxtbox.ScrollBars = ScrollBars.Vertical;
             highScoreTxtbox.Size = new Size(521, 224);
             highScoreTxtbox.TabIndex = 0;
             // 
@@ -73,11 +75,22 @@
             resetHighScoreBoardBtn.UseVisualStyleBackColor = true;
             resetHighScoreBoardBtn.Click += resetHighScoreBoardBtn_Click;
             // 
+            // exportStatsBtn
+            // 
+            exportStatsBtn.Location = new Point(287, 370);
+            exportStatsBtn.Name = "exportStatsBtn";
+            exportStatsBtn.Size = new Size(142, 23);
+            exportStatsBtn.TabIndex = 4;
+            exportStatsBtn.Text = "Export Stats";
+            exportStatsBtn.UseVisualStyleBackColor = true;
+            exportStatsBtn.Click += exportStatsBtn_Click;
+            // 
             // HighScoreBoard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(exportStatsBtn);
             Controls.Add(resetHighScoreBoardBtn);
             Controls.Add(sortTimeandScoreBtn);
             Controls.Add(sortByOverallScoreBtn);
@@ -94,5 +107,6 @@
         private Button sortByOverallScoreBtn;
         private Button sortTimeandScoreBtn;
         private Button resetHighScoreBoardBtn;
+        private Button exportStatsBtn;
     }
 }

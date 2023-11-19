@@ -7,14 +7,19 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Reflection.Metadata.BlobBuilder;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace KevinMaduProject2.View
 {
     public partial class HighScoreBoard : Form
     {
         private List<Round> _rounds;
+
         public HighScoreBoard(List<Round> list)
         {
             InitializeComponent();
@@ -23,6 +28,9 @@ namespace KevinMaduProject2.View
 
             PopulateBoard();
         }
+
+
+
 
         private void PopulateBoard()
         {
@@ -54,6 +62,41 @@ namespace KevinMaduProject2.View
             _rounds.Clear();
             highScoreTxtbox.Text = "";
             PopulateBoard();
+        }
+
+        private void exportStatsBtn_Click(object sender, EventArgs e)
+        {
+            public void ExportCsv()
+            {
+                Stream myStream;
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+                saveFileDialog1.Filter = "csv files (*.csv)|*.csv";
+                saveFileDialog1.FilterIndex = 2;
+                saveFileDialog1.RestoreDirectory = true;
+                saveFileDialog1.Title = "Export as CSV";
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    if ((myStream = saveFileDialog1.OpenFile()) != null)
+                    {
+                        using (StreamWriter writer = new StreamWriter(myStream, Encoding.UTF8))
+                        {
+                            writer.WriteLine("Text,Time Entered, Points");
+                            foreach (var round in _rounds)
+                            {
+                                foreach (var word in round.ValidWords)
+                                {
+                                    writer.WriteLine("Anonymous Attempt - " + word.ToString());
+                                }
+                                
+                            }
+                        }
+
+                        myStream.Close();
+                    }
+                }
+            }
         }
     }
 }

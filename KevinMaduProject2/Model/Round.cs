@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace KevinMaduProject2.Model
@@ -15,14 +16,11 @@ namespace KevinMaduProject2.Model
 
         private int _score;
 
-        public int Score
-        {
-            get
-            {
-                return _score;
-            }
+        public int Score {
+            get { return _score; } 
         }
-
+            
+       
         public Clock Clock { get; set; }
 
         public List<ValidWord>ValidWords { get; }
