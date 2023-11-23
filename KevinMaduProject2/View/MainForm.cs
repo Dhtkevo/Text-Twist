@@ -302,7 +302,7 @@ namespace KevinMaduProject2
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_textTwist.Round.Score > 0) _textTwist.SaveRoundHistory();
+            if (_textTwist.Round.Score > 0 && _textTwist.Round.Clock.TimeInSeconds != 0) _textTwist.SaveRoundHistory();
             _textTwist.CreateNewRound();
             scoreLbl.Visible = false;
             Timer1.Enabled = true;
