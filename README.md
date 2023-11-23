@@ -3,6 +3,8 @@
 A .NET Core 7 desktop application that is meant to resemble the game of [Text Twist](http://www.wordplays.com/wordgames/text-twist).
 
 <img width="794" alt="Screenshot 2023-11-20 at 5 03 40 PM" src="https://github.com/Dhtkevo/Text-Twist/assets/110263079/bbf10790-c648-4682-8286-033f7159eb6c">
+<img width="801" alt="Screenshot 2023-11-22 at 9 22 25 PM" src="https://github.com/Dhtkevo/Text-Twist/assets/110263079/67a88a8c-bcb4-494e-8bd2-1d2c8ad16d5c">
+<img width="804" alt="Screenshot 2023-11-22 at 9 23 11 PM" src="https://github.com/Dhtkevo/Text-Twist/assets/110263079/85068bb7-26b6-441f-9d81-925b5fcda3cf">
 
 
 ## Installation and Setup Instructions
