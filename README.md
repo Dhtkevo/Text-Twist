@@ -2,7 +2,7 @@
 
 A .NET Core 7 desktop application that is meant to resemble the game of [Text Twist](http://www.wordplays.com/wordgames/text-twist).
 
-<img width="794" alt="Screenshot 2023-11-20 at 5 03 40 PM" src="https://github.com/Dhtkevo/Text-Twist/assets/110263079/26955ccb-1ab3-4a09-b8d5-f89631f748e2">
+<img width="794" alt="Screenshot 2023-11-20 at 5 03 40 PM" src="https://github.com/Dhtkevo/Text-Twist/assets/110263079/bbf10790-c648-4682-8286-033f7159eb6c">
 
 
 ## Installation and Setup Instructions
